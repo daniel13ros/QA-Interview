@@ -1,8 +1,6 @@
 # תרומה למאגר השאלות (Q&A)
 
 תודה על הרצון לתרום למאגר!
-יש רשימת פקודות מוכנה לעבודה עם גיטהאב תחת:
-[06-Git/How_To_Contribute.md](06-Git/How_To_Contribute.md)
 
 ## איך מוסיפים שאלות?
 
@@ -92,3 +90,6 @@ git push    # to your personal forked repository
 * כל שאלה חדשה חייבת לכלול תשובה מתאימה.
 
 תודה על התרומה והעזרה בשיפור המאגר!
+
+יש רשימת פקודות מוכנה לעבודה עם גיטהאב תחת:
+[06-Git/How_To_Contribute.md](06-Git/How_To_Contribute.md)
