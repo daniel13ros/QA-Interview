@@ -39,7 +39,8 @@ git remote -v
 	# verify - now, should show both remotes (our remote(=origin) and owner(=upstream))
 ```
 
-2. Must do each time before work - sync local with both remotes ("upstream" and "origin").
+2. Must do each time before work:
+* sync local with both remotes ("upstream" and "origin").
 ```bash
 git fetch upstream
 	# get owner's latest
@@ -108,7 +109,30 @@ Submit PR
 ---
 ---
 
-5. hopefully you do not need that part:
+## common problems:
+
+5. Owner updated his repo, before your PR:
+```bash
+# first - save your changes at branch, here will name it "my-feature-branch"
+# second - repeat stage "2. sync local with both remotes" with local main. after our main updated, lets merge the new branch to it:
+
+git switch my-feature-branch         
+	# back to your new branch
+	# alternative command (exactly the same - older syntax):
+	git checkout my-feature-branch
+
+git rebase main
+	# merge your branch with updated-upstream-main (rebase=replay your commits on top of updated main)
+
+git push origin my-feature-branch --force-with-lease  
+	# update origin (=fork) with our local branch
+	# after rebase must push with "force" - as we mess with history
+	# "--force-with-lease" is safer than "--force" — it refuses to push if someone else updated the branch remotely.
+```
+
+
+
+6. hopefully you do not need that part:
 * solve upstream conflicts (when owner updates remote, and has conflicts with our local):
 * we have 3 options: "fetch & merge"/"pull" (called "back-merge") and "rebase" - they are the same with minor difference. usually experts use rebase as it more clean. but back-merge is safer and create more commits.
 
