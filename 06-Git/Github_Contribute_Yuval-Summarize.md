@@ -116,7 +116,7 @@ Submit PR
 # first - save your changes at branch, here will name it "my-feature-branch"
 # second - repeat stage "2. sync local with both remotes" with local main. after our main updated, lets merge the new branch to it:
 
-git switch my-feature-branch         
+git switch my-feature-branch
 	# back to your new branch
 	# alternative command (exactly the same - older syntax):
 	git checkout my-feature-branch
@@ -124,7 +124,7 @@ git switch my-feature-branch
 git rebase main
 	# merge your branch with updated-upstream-main (rebase=replay your commits on top of updated main)
 
-git push origin my-feature-branch --force-with-lease  
+git push origin my-feature-branch --force-with-lease
 	# update origin (=fork) with our local branch
 	# after rebase must push with "force" - as we mess with history
 	# "--force-with-lease" is safer than "--force" — it refuses to push if someone else updated the branch remotely.
