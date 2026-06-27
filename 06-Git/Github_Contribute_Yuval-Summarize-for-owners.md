@@ -1,7 +1,7 @@
 
 1. after accept GitHub PR - how to update local - when I'm the owner:
 ```bash
-# alternative command (exactly the same - shorter):
+# (shortest option):
 git checkout main
 git pull origin main
 
@@ -25,7 +25,7 @@ git status
 
 
 2. how to solve merge conflict - when I'm the owner (3 options, they are the same, minor changes):
-option1-shortest:
+* option1-shortest:
 ```bash option1-shortest:
 # 1. Make sure your main is up to date
 git checkout main
@@ -51,7 +51,8 @@ git switch main
 git merge fix_conflict_branch --no-ff -m "Merge fix: resolved conflict with contributor"
 git push origin main
 ```
-option 2 - use FETCH_HEAD raw (exactly like option 3, different naming):* FETCH_HEAD - where git stores the result temporarily — no remote saved
+* option 2 - use FETCH_HEAD raw (exactly like option 3, different naming):
+* FETCH_HEAD - where git stores the result temporarily — no remote saved
 ```bash option 2 - use FETCH_HEAD raw (exactly like option 3, different naming):
 # 1. Make sure your main is up to date
 git checkout main
@@ -87,7 +88,7 @@ git push origin main
 # clean up:
 git branch -d fix_conflict_branch
 ```
-option 3 - save at branch "FETCH_HEAD":
+* option 3 - save at branch "FETCH_HEAD":
 ```bash option 3 - save at branch "FETCH_HEAD":
 # 1. Make sure your main is up to date
 git checkout main
